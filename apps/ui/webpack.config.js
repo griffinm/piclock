@@ -21,11 +21,6 @@ module.exports = {
       },
     ],
   },
-  resolve: {
-    alias: {
-      '@': join(__dirname, 'src'),
-    },
-  },
   plugins: [
     new NxAppWebpackPlugin({
       tsConfig: './tsconfig.app.json',
@@ -43,5 +38,13 @@ module.exports = {
       // See: https://react-svgr.com/
       // svgr: false
     }),
+    {
+      apply(compiler) {
+        compiler.options.resolve.alias = {
+          ...compiler.options.resolve.alias,
+          '@': join(__dirname, 'src'),
+        };
+      },
+    },
   ],
 };

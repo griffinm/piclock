@@ -7,8 +7,16 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <div className="main-container">
-      <Clock />
+    <div className="main-container p-4">
+      <div className="flex flex-row">
+        <div className="flex-1">
+          Left
+        </div>
+        <div className="flex-1">
+          <Clock />
+        </div>
+
+      </div>
     </div>
   </StrictMode>
 );
